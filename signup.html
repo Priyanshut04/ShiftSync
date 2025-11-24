@@ -12,8 +12,8 @@
     <div class="container">
         <header>
             <div class="logo">
-          <img src="images/logo.jpeg" alt="Shift Sync Logo" />
-        </div>
+                <img src="images/logo.jpeg" alt="Shift Sync Logo" />
+            </div>
             <h1>Create Account</h1>
         </header>
 
@@ -44,6 +44,9 @@
                     <option value="manager">Manager</option>
                 </select>
             </div>
+            
+            <!-- Red message for duplicate username -->
+            <p id="error-message" class="error-message" style="display: none;">This Employee ID is already registered.</p>
 
             <div class="button-group">
                 <button type="submit" class="submit-btn">Create Account</button>
@@ -52,5 +55,16 @@
 
         <p class="login-link">Already have an account? <a href="login.html">Log in here.</a></p>
     </div>
+    
+    <script>
+        // Check for the error parameter in the URL and display the message
+        const urlParams = new URLSearchParams(window.location.search);
+        const errorMessage = urlParams.get('error');
+
+        if (errorMessage === 'duplicate') {
+            const errorElement = document.getElementById('error-message');
+            errorElement.style.display = 'block';
+        }
+    </script>
 </body>
 </html>

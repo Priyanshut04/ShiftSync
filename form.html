@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shift Handover Log File - Coal Mining Operations</title>
+    <link rel="stylesheet" href="form.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">
+          <img src="images/logo.jpeg" alt="Shift Sync Logo" />
+        </div>
+        <h1>SHIFT HANDOVER LOG</h1>
+      </header>
+
+      <form action="/submit-form" method="POST">
+        <div class="form-section">
+          <div class="form-group">
+            <label for="date" class="required">Date & Time</label>
+            <div class="datetime-group">
+              <input
+                type="date"
+                id="date"
+                name="date"
+                required
+                placeholder="DD-MM-YYYY"
+              />
+              <input
+                type="time"
+                id="time"
+                name="time"
+                required
+                placeholder="HHMM"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="outgoing_shift">Outgoing Shift</label>
+            <input
+              type="text"
+              id="outgoing_shift"
+              name="outgoing_shift"
+              placeholder="E.g., Morning Shift"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Outgoing Shift Handover Leader</label>
+            <div class="name-group">
+              <div>
+                <input
+                  type="text"
+                  id="outgoing_leader_first_name"
+                  name="outgoing_leader_first_name"
+                  placeholder="First Name"
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  id="outgoing_leader_last_name"
+                  name="outgoing_leader_last_name"
+                  placeholder="Last Name"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="form-section-title">SAFETY STATUS</div>
+          <div class="form-group">
+            <label for="emergency_equipment_status"
+              >Status of emergency equipment/systems</label
+            >
+            <input
+              type="text"
+              id="emergency_equipment_status"
+              name="emergency_equipment_status"
+              placeholder="Any issues or OK?"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="hsse_incidents">HSSE incidents or issues</label>
+            <textarea
+              id="hsse_incidents"
+              name="hsse_incidents"
+              placeholder="Describe any incidents or issues"
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="form-section-title">OPERATIONAL NOTES</div>
+          <div class="form-group">
+            <label for="permits_status"
+              >List and status of permitted maintenance or construction
+              work</label
+            >
+            <textarea
+              id="permits_status"
+              name="permits_status"
+              placeholder="Provide details on permits"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="isolations_overrides_suppressions" class="required"
+              >Isolations, overrides, and alarm suppressions</label
+            >
+            <textarea
+              id="isolations_overrides_suppressions"
+              name="isolations_overrides_suppressions"
+              required
+              placeholder="Details of any active isolations or overrides"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="reappraisal_needed" class="required"
+              >Any re-appraisal of site conditions and control measures
+              needed</label
+            >
+            <textarea
+              id="reappraisal_needed"
+              name="reappraisal_needed"
+              required
+              placeholder="Describe any required re-appraisals"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="simops_issues">SIMOPS issues</label>
+            <textarea
+              id="simops_issues"
+              name="simops_issues"
+              placeholder="Any issues related to simultaneous operations"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="mocs_implemented" class="required"
+              >MOCs implemented</label
+            >
+            <textarea
+              id="mocs_implemented"
+              name="mocs_implemented"
+              required
+              placeholder="Details on any Management of Change implemented"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="abnormal_operation_modes" class="required"
+              >Any abnormal operation modes</label
+            >
+            <textarea
+              id="abnormal_operation_modes"
+              name="abnormal_operation_modes"
+              required
+              placeholder="Describe any abnormal operational modes"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="changes_during_shift" class="required"
+              >Changes in operating mode made during shift</label
+            >
+            <textarea
+              id="changes_during_shift"
+              name="changes_during_shift"
+              required
+              placeholder="Describe any changes made"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="changes_next_shift" class="required"
+              >Changes in operating mode required next shift</label
+            >
+            <textarea
+              id="changes_next_shift"
+              name="changes_next_shift"
+              required
+              placeholder="Describe any planned changes for next shift"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="equipment_availability_issues" class="required"
+              >Equipment availability issues</label
+            >
+            <textarea
+              id="equipment_availability_issues"
+              name="equipment_availability_issues"
+              required
+              placeholder="Report any equipment availability issues"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="personal_issues">Personal issues</label>
+            <textarea
+              id="personal_issues"
+              name="personal_issues"
+              placeholder="Note any personal issues or concerns"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="general_communications">General communications</label>
+            <textarea
+              id="general_communications"
+              name="general_communications"
+              placeholder="Summarize general communications"
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="form-section-title">HANDOVER CHECKLIST</div>
+          <div class="form-group">
+            <label class="required"
+              >Shift Handover Log properly filled out?</label
+            >
+            <div class="radio-group">
+              <label
+                ><input type="radio" name="log_complete" value="YES" required />
+                YES</label
+              >
+              <label
+                ><input type="radio" name="log_complete" value="NO" /> NO</label
+              >
+              <label
+                ><input type="radio" name="log_complete" value="NA" /> NA</label
+              >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="required"
+              >Briefing held between shift handover leaders?</label
+            >
+            <div class="radio-group">
+              <label
+                ><input
+                  type="radio"
+                  name="briefing_leaders"
+                  value="YES"
+                  required
+                />
+                YES</label
+              >
+              <label
+                ><input type="radio" name="briefing_leaders" value="NO" />
+                NO</label
+              >
+              <label
+                ><input type="radio" name="briefing_leaders" value="NA" />
+                NA</label
+              >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="required">Briefing held between shift workers?</label>
+            <div class="radio-group">
+              <label
+                ><input
+                  type="radio"
+                  name="briefing_workers"
+                  value="YES"
+                  required
+                />
+                YES</label
+              >
+              <label
+                ><input type="radio" name="briefing_workers" value="NO" />
+                NO</label
+              >
+              <label
+                ><input type="radio" name="briefing_workers" value="NA" />
+                NA</label
+              >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="required">Adequate time allotted for handover?</label>
+            <div class="radio-group">
+              <label
+                ><input
+                  type="radio"
+                  name="adequate_time"
+                  value="YES"
+                  required
+                />
+                YES</label
+              >
+              <label
+                ><input type="radio" name="adequate_time" value="NO" />
+                NO</label
+              >
+              <label
+                ><input type="radio" name="adequate_time" value="NA" />
+                NA</label
+              >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="required"
+              >Location of turn over briefing free of distractions?</label
+            >
+            <div class="radio-group">
+              <label
+                ><input
+                  type="radio"
+                  name="distraction_free_location"
+                  value="YES"
+                  required
+                />
+                YES</label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="distraction_free_location"
+                  value="NO"
+                />
+                NO</label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="distraction_free_location"
+                  value="NA"
+                />
+                NA</label
+              >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="required"
+              >Work area inspections performed at beginning of shift?</label
+            >
+            <div class="radio-group">
+              <label
+                ><input
+                  type="radio"
+                  name="work_area_inspections"
+                  value="YES"
+                  required
+                />
+                YES</label
+              >
+              <label
+                ><input type="radio" name="work_area_inspections" value="NO" />
+                NO</label
+              >
+              <label
+                ><input type="radio" name="work_area_inspections" value="NA" />
+                NA</label
+              >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="required"
+              >Re-appraisal of site conditions performed for work carrying over
+              between shifts?</label
+            >
+            <div class="radio-group">
+              <label
+                ><input
+                  type="radio"
+                  name="reappraisal_performed"
+                  value="YES"
+                  required
+                />
+                YES</label
+              >
+              <label
+                ><input type="radio" name="reappraisal_performed" value="NO" />
+                NO</label
+              >
+              <label
+                ><input type="radio" name="reappraisal_performed" value="NA" />
+                NA</label
+              >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="required"
+              >Shift Handover Leader discussed handover information with shift
+              workers?</label
+            >
+            <div class="radio-group">
+              <label
+                ><input
+                  type="radio"
+                  name="leader_discussed_info"
+                  value="YES"
+                  required
+                />
+                YES</label
+              >
+              <label
+                ><input type="radio" name="leader_discussed_info" value="NO" />
+                NO</label
+              >
+              <label
+                ><input type="radio" name="leader_discussed_info" value="NA" />
+                NA</label
+              >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="required"
+              >Shift Handover Leaders signed shift handover log?</label
+            >
+            <div class="radio-group">
+              <label
+                ><input
+                  type="radio"
+                  name="leader_signed_log"
+                  value="YES"
+                  required
+                />
+                YES</label
+              >
+              <label
+                ><input type="radio" name="leader_signed_log" value="NO" />
+                NO</label
+              >
+              <label
+                ><input type="radio" name="leader_signed_log" value="NA" />
+                NA</label
+              >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="suggestions_for_improvement"
+              >Suggestions for improvement to shift handover</label
+            >
+            <textarea
+              id="suggestions_for_improvement"
+              name="suggestions_for_improvement"
+              placeholder="Add any suggestions here"
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="form-group">
+            <label for="incoming_shift" class="required">Incoming Shift</label>
+            <input
+              type="text"
+              id="incoming_shift"
+              name="incoming_shift"
+              required
+              placeholder="E.g., Night Shift"
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="required">Incoming Shift Handover Leader</label>
+            <div class="name-group">
+              <div>
+                <input
+                  type="text"
+                  id="incoming_leader_first_name"
+                  name="incoming_leader_first_name"
+                  placeholder="First Name"
+                  required
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  id="incoming_leader_last_name"
+                  name="incoming_leader_last_name"
+                  placeholder="Last Name"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="evaluator_signature" class="required"
+              >Signature of Evaluator</label
+            >
+            <div class="signature-pad" id="evaluator_signature_pad"></div>
+            <span
+              class="signature-clear"
+              onclick="clearSignature('evaluator_signature_pad')"
+              >Clear</span
+            >
+            <input
+              type="hidden"
+              id="evaluator_signature_data"
+              name="evaluator_signature_data"
+            />
+          </div>
+        </div>
+
+        <div class="button-group">
+          <button type="button" class="back-btn">Back</button>
+          <button type="submit" class="submit-btn">Submit</button>
+          <a href="/logout" class="logout-link">Logout</a>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      function clearSignature(id) {
+        const pad = document.getElementById(id);
+        console.log(`Clearing signature pad: ${id}`);
+        document.getElementById(id.replace("_pad", "_data")).value = "";
+      }
+      document.addEventListener("DOMContentLoaded", () => {
+        const signaturePads = document.querySelectorAll(".signature-pad");
+        signaturePads.forEach((pad) => {
+          pad.addEventListener("click", () => {
+            alert(
+              "This is a placeholder for a signature pad. You would integrate a JavaScript library here to enable drawing signatures."
+            );
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -16,7 +16,8 @@
             <h1>Log In</h1>
         </header>
 
-        <form action="#" method="POST"> <div class="form-group">
+        <form action="/login" method="POST">
+            <div class="form-group">
                 <label for="username">Employee ID</label>
                 <input type="text" id="username" name="username" placeholder="Enter your employee ID" required>
             </div>
@@ -25,13 +26,27 @@
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" placeholder="Enter your password" required>
             </div>
+            
+            <!-- Red message for invalid login -->
+            <p id="error-message" class="error-message" style="display: none;">Invalid Employee ID or Password.</p>
 
             <div class="button-group">
-                <button type="button" class="submit-btn" onclick="window.location.href='form.html'">Log In</button>
+                <button type="submit" class="submit-btn">Log In</button>
             </div>
         </form>
 
         <p class="signup-link">Don't have an account? <a href="signup.html">Create one here.</a></p>
     </div>
+
+    <script>
+        // Check for the error parameter in the URL and display the message
+        const urlParams = new URLSearchParams(window.location.search);
+        const errorMessage = urlParams.get('error');
+
+        if (errorMessage === 'invalid') {
+            const errorElement = document.getElementById('error-message');
+            errorElement.style.display = 'block';
+        }
+    </script>
 </body>
 </html>

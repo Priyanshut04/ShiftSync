@@ -42,7 +42,6 @@ body {
 header {
     margin-bottom: 40px;
 }
-
 .logo {
 width: 100px; 
 height: 100px;
@@ -140,6 +139,15 @@ select option {
 
 .name-group input {
     flex: 1;
+}
+
+/* Error message styling */
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: -15px;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 /* Button Styling */

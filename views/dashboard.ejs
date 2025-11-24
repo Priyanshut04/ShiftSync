@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shift Sync - Dashboard</title>
+    <link rel="stylesheet" href="form.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* This is a temporary CSS for the dashboard table, we'll refine it later */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #333;
+        }
+        th {
+            background-color: #2a2a2a;
+            color: var(--accent-color);
+        }
+        tr:hover {
+            background-color: #252525;
+        }
+        .container {
+            max-width: 1200px;
+            padding: 50px;
+        }
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .search-form {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .search-form input, .search-form button {
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background-color: var(--input-bg-color);
+            color: var(--text-color);
+            font-family: var(--font-primary);
+        }
+        .search-form button {
+            background-color: var(--accent-color);
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+        .search-form button:hover {
+            background-color: var(--accent-hover);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="images/logo.jpeg" alt="Shift Sync Logo" />
+            </div>
+            <h1>Dashboard</h1>
+            <div class="dashboard-header">
+                <% if (role === 'manager') { %>
+                    <p>Welcome, Manager! You can view all submitted logs here.</p>
+                <% } else { %>
+                    <p>Welcome, Shift Operator! You can view your submitted logs here.</p>
+                <% } %>
+                <a href="/logout" class="logout-link">Logout</a>
+            </div>
+        </header>
+
+        <a href="/form.html" class="new-log-link">Create New Log</a>
+
+        <form action="/dashboard" method="GET" class="search-form">
+            <input type="text" name="search" placeholder="Search by name or shift..." value="<%= search %>">
+            <input type="date" name="date" value="<%= date %>">
+            <button type="submit">Search</button>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Outgoing Shift</th>
+                    <th>Outgoing Leader</th>
+                    <th>View</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% logs.forEach(log => { %>
+                    <tr>
+                        <td><%= log.date.toLocaleDateString() %></td>
+                        <td><%= log.time %></td>
+                        <td><%= log.outgoing_shift %></td>
+                        <td><%= log.outgoing_leader_first_name %> <%= log.outgoing_leader_last_name %></td>
+                        <td><a href="/log/<%= log.id %>">View Details</a></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shift Sync - Log #<%= log.id %></title>
+    <link rel="stylesheet" href="/form.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .details-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px;
+            background-color: var(--card-bg-color);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px var(--shadow-color);
+        }
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .detail-item:last-child {
+            border-bottom: none;
+        }
+        .detail-label {
+            font-weight: 600;
+            color: var(--accent-color);
+            flex-basis: 30%;
+            margin-right: 20px;
+        }
+        .detail-value {
+            flex-basis: 70%;
+            text-align: right;
+            line-height: 1.6;
+        }
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin-top: 30px;
+            padding: 12px 25px;
+            background-color: var(--accent-color);
+            color: var(--text-color);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: var(--accent-hover);
+        }
+    </style>
+</head>
+<body>
+    <div class="details-container">
+        <header>
+            <div class="logo">
+                <img src="/images/logo.jpeg" alt="Shift Sync Logo" />
+            </div>
+            <h1>Log Details</h1>
+            <p>Details for Log ID: #<%= log.id %></p>
+        </header>
+
+        <div class="detail-item">
+            <span class="detail-label">Date:</span>
+            <span class="detail-value"><%= log.date.toLocaleDateString() %></span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Time:</span>
+            <span class="detail-value"><%= log.time %></span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Outgoing Shift:</span>
+            <span class="detail-value"><%= log.outgoing_shift %></span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Outgoing Leader:</span>
+            <span class="detail-value"><%= log.outgoing_leader_first_name %> <%= log.outgoing_leader_last_name %></span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Emergency Equipment Status:</span>
+            <span class="detail-value"><%= log.emergency_equipment_status %></span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">HSSE Incidents:</span>
+            <span class="detail-value"><%= log.hsse_incidents %></span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Permits Status:</span>
+            <span class="detail-value"><%= log.permits_status %></span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Isolations, Overrides, Suppressions:</span>
+            <span class="detail-value"><%= log.isolations_overrides_suppressions %></span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Re-appraisal Needed:</span>
+            <span class="detail-value"><%= log.reappraisal_needed %></span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">SIMOPS Issues:</span>
+            <span class="detail-value"><%= log.simops_issues %></span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">MOCs Implemented:</span>
+            <span class="detail-value"><%= log.mocs_implemented %></span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Abnormal Operation Modes:</span>
+            <span class="detail-value"><%= log.abnormal_operation_modes %></span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Changes During Shift:</span>
+            <span class="detail-value"><%= log.changes_during_shift %></span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Changes Next Shift:</span>
+            <span class="detail-value"><%= log.changes_next_shift %></span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Equipment Availability Issues:</span>
+            <span class="detail-value"><%= log.equipment_availability_issues %></span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Personal Issues:</span>
+            <span class="detail-value"><%= log.personal_issues %></span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">General Communications:</span>
+            <span class="detail-value"><%= log.general_communications %></span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Log Properly Filled Out?:</span>
+            <span class="detail-value"><%= log.log_complete %></span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Briefing Held Between Leaders?:</span>
+            <span class="detail-value"><%= log.briefing_leaders %></span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Briefing Held Between Workers?:</span>
+            <span class="detail-value"><%= log.briefing_workers %></span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Adequate Time for Handover?:</span>
+            <span class="detail-value"><%= log.adequate_time %></span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Distraction-Free Location?:</span>
+            <span class="detail-value"><%= log.distraction_free_location %></span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Work Area Inspections Performed?:</span>
+            <span class="detail-value"><%= log.work_area_inspections %></span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Re-appraisal Performed?:</span>
+            <span class="detail-value"><%= log.reappraisal_performed %></span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Leader Discussed Info?:</span>
+            <span class="detail-value"><%= log.leader_discussed_info %></span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Leaders Signed Log?:</span>
+            <span class="detail-value"><%= log.leader_signed_log %></span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Suggestions for Improvement:</span>
+            <span class="detail-value"><%= log.suggestions_for_improvement %></span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Incoming Shift:</span>
+            <span class="detail-value"><%= log.incoming_shift %></span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Incoming Leader:</span>
+            <span class="detail-value"><%= log.incoming_leader_first_name %> <%= log.incoming_leader_last_name %></span>
+        </div>
+
+        <a href="/dashboard" class="back-button">Back to Dashboard</a>
+    </div>
+</body>
+</html>
